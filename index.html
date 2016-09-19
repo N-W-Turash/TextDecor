@@ -1,0 +1,391 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>TextDecor</title>
+    <link rel="shortcut icon" href="img/title.png" type="image/png"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="TextDecor">
+    <meta name="description" content="TextDecor is a css generator which enables you to preview font/text styling in web and generates the css code.">
+    <meta name="keywords" content="text, font, css, generator, style, styling, web design, web development, css code generator, random style generator">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-colorpicker/2.3.0/css/bootstrap-colorpicker.min.css">
+    <link rel="stylesheet" type="text/css" href="css/libs/flati.css">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans|Roboto:400,400italic,500,500italic,700,700italic,900,900italic|Droid+Sans:400,700|Fjalla+One|Lato:400,400italic,700,700italic,900|Slabo+27px|Oswald:400,300,700|Roboto+Condensed:400,300,400italic,700,700italic|Lora:400,400italic,700,700italic|Montserrat:400,700|PT+Sans:400,400italic,700|Raleway:400,500,600,700,800,900|Open+Sans+Condensed:300,700|Ubuntu:400,400italic,500,500italic,700,700italic|Roboto+Slab:400,700|Droid+Serif:400,400italic,700,700italic|Merriweather:400,400italic,700,700italic,900,900italic|Arimo:400,400italic,700,700italic|PT+Sans+Narrow:400,700|Noto+Sans:400,400italic,700,700italic|Titillium+Web:400,400italic,600,700,700italic,900,600italic|PT+Serif:400,400italic,700,700italic|Bitter:400,400italic,700|Dosis:400,500,600,700,800|Yanone+Kaffeesatz:400,300,700|Playfair+Display:400,400italic,700,700italic,900,900italic|Oxygen:400,300,700|Arvo:400,400italic,700,700italic|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="css/style.css">
+    <!--Google Analytics-->
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-71017507-1', 'auto');
+      ga('send', 'pageview');
+    </script>
+</head>
+
+<body>
+
+    <div class="container-fluid">
+        <a href="https://github.com/N-W-Turash/TextCheck" target="_blank"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://camo.githubusercontent.com/365986a132ccd6a44c23a9169022c0b5c890c387/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f7265645f6161303030302e706e67" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_right_red_aa0000.png"></a>
+        <div class="row">
+           <div class="header-section">
+                <h2 class="header text-center"> <img  class="title-img" src="img/logo.png">TextDecor</h2>
+                <h5 class="sub-header text-center">Preview Font/Text Styling for Web</h5>
+            </div>
+        </div>
+        <div class="row code">
+            <div class="col-lg-6 col-md-6 col-sm-7">
+                <div class="main-section">
+                    <textarea id="input" class="form-control form-element" rows="3" placeholder="Write/Ctrl+v Your Text Here"></textarea>
+                    <div id="output">
+                        <span class="glyphicon glyphicon-move pull-right" aria-hidden="true" id="move"></span> 
+                    </div>
+                    <ul class="list-inline">
+                        <li><button class="btn" id="gen" role="button" data-toggle="popover" data-trigger="hover" data-placement="bottom"  title="" data-content="Generate An Example Text."><span class="glyphicon glyphicon-plus-sign icon-left" aria-hidden="true"></span>Example Text</button></li>
+                        <li> <button class="btn" id="cleaner" role="button" data-toggle="popover" data-trigger="hover" data-placement="bottom"  title="" data-content="Clear Text from Textarea And Output."><span class="glyphicon glyphicon-erase icon-left" aria-hidden="true"></span>Clear Text</button></li>                             
+                    </ul>            
+                    <div class="row settings">
+                        <div class="col-lg-3 col-md-3 col-sm-3">
+                            <p class="header-section"><span class="glyphicon glyphicon-cog icon-left" aria-hidden="true"></span>font-size</p> 
+                            <select class="form-control form-element" id="size">
+                            </select>
+                        </div>
+                        <div class="col-lg-3 col-md-3 col-sm-3">
+                            <p class="header-section"><span class="glyphicon glyphicon-cog icon-left" aria-hidden="true"></span>font-style</p> 
+                            <select class="form-control form-element" id="style">       
+                            </select>
+                        </div>
+                        <div class="col-lg-6 col-md-6 col-sm-6">
+                            <div>
+                                <p class="header-section"><span class="glyphicon glyphicon-cog icon-left" aria-hidden="true"></span>font-family</p>
+                                <select class="form-control form-element" id="fonts">
+                                </select>
+                            </div>
+                        </div>      
+                    </div>
+                    <div class="row settings">
+                        <div class="col-lg-3 col-md-3 col-sm-3">
+                            <p class="header-section"><span class="glyphicon glyphicon-cog icon-left" aria-hidden="true"></span>font-weight</p> 
+                            <select class="form-control form-element" id="weight">      
+                            </select>
+                        </div>
+                        <div class="col-lg-3 col-md-3 col-sm-3">
+                            <p class="header-section"><span class="glyphicon glyphicon-cog icon-left" aria-hidden="true"></span>font-variant</p> 
+                            <select class="form-control form-element" id="variant"></select>
+                        </div>
+                        <div class="col-lg-6 col-md-6 col-sm-6">
+                            <p class="header-section"><span class="glyphicon glyphicon-cog icon-left" aria-hidden="true"></span>color</p>
+                            <div class="input-group demo2">
+                                <input type="text" value="#00000" class="form-control form-element" id="color"/>
+                                <span class="input-group-addon input-group-addon-color"><span></span></span>
+                            </div> 
+                        </div>
+                    </div>
+                    <div class="row settings">
+                        <div class="col-lg-3 col-md-3 col-sm-3">
+                            <p class="header-section"><span class="glyphicon glyphicon-cog icon-left" aria-hidden="true"></span>letter-spacing</p> 
+                            <select class="form-control form-element" id="spacing"> 
+                            </select>
+                        </div>
+                        <div class="col-lg-3 col-md-3 col-sm-3">
+                            <p class="header-section"><span class="glyphicon glyphicon-cog icon-left" aria-hidden="true"></span>word-spacing</p> 
+                            <select class="form-control form-element" id="word-spacing">    
+                            </select>
+                        </div>
+                        <div class="col-lg-6 col-md-6 col-sm-6">
+                            <p class="header-section"><span class="glyphicon glyphicon-cog icon-left" aria-hidden="true"></span>text-transform</p> 
+                            <select class="form-control form-element" id="transform">    
+                            </select>
+                        </div>
+                    </div>
+                    <div class="row settings">
+                        <div class="col-lg-3 col-md-3 col-sm-3">
+                            <p class="header-section"><span class="glyphicon glyphicon-cog icon-left" aria-hidden="true"></span>text-decoration</p> 
+                            <select class="form-control form-element" id="decoration"> 
+                            </select>
+                        </div>
+                        <div class="col-lg-3 col-md-3 col-sm-3">
+                            <p class="header-section"><span class="glyphicon glyphicon-cog icon-left" aria-hidden="true"></span>text-align</p> 
+                            <select class="form-control form-element" id="align"> 
+                            </select>
+                        </div>
+                         <div class="col-lg-6 col-md-6 col-sm-6">
+                            <p class="header-section"><span class="glyphicon glyphicon-cog icon-left" aria-hidden="true"></span>background</p>
+                            <div class="input-group demo2">
+                                <input type="text" value="#fffcfc" class="form-control form-element"
+                                id="background"/>
+                                <span class="input-group-addon input-group-addon-background"><span></span></span>
+                            </div> 
+                        </div>
+                    </div>
+                    <div class="row settings">
+                        <div class="col-lg-3 col-md-3 col-sm-3">
+                            <p class="header-section"><span class="glyphicon glyphicon-cog icon-left" aria-hidden="true"></span>padding</p> 
+                            <select class="form-control form-element" id="padding"> 
+                            </select>
+                        </div>
+                    </div>
+                    <div class="row settings">
+                        <div class="col-lg-12 col-md-12 col-sm-12">
+                            <div class="row">
+                                <div class="col-lg-9 col-md-9 col-sm-9">
+                                    <p class="header-section"><span class="glyphicon glyphicon-cog icon-left" aria-hidden="true"></span>text-shadow</p> 
+                                </div>
+                                <div class="col-lg-3 col-md-3 col-sm-3">
+                                     <div class="checkbox">
+                                        <label>
+                                            <input type="checkbox" class="" id="no-shadow" value="" aria-label="..." >
+                                            none
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                                              
+                            <div class="row">
+                                <div class="col-lg-3 col-md-6 col-sm-6">
+                                    <p class="header-section"><span class="glyphicon glyphicon-cog icon-left" aria-hidden="true"></span>h-shadow</p> 
+                                    <select class="form-control form-element" id="h-shadow"> 
+                                    </select>
+                                </div>
+                                <div class="col-lg-3 col-md-6 col-sm-6">
+                                    <p class="header-section"><span class="glyphicon glyphicon-cog icon-left" aria-hidden="true"></span>v-shadow</p> 
+                                    <select class="form-control form-element" id="v-shadow"> 
+                                    </select>
+                                </div>
+                                <div class="col-lg-3 col-md-6 col-sm-6">
+                                    <p class="header-section"><span class="glyphicon glyphicon-cog icon-left" aria-hidden="true"></span>blur-radius</p> 
+                                    <select class="form-control form-element" id="radius"> 
+                                    </select>
+                                </div>
+                                <div class="col-lg-3 col-md-6 col-sm-6">
+                                    <p class="header-section"><span class="glyphicon glyphicon-cog icon-left" aria-hidden="true"></span>color</p> 
+                                     <div class="input-group demo2">
+                                        <input type="text" value="#ffffff" class="form-control form-element"
+                                        id="shadow-color"/>
+                                        <span class="input-group-addon input-group-addon-shadow"><span></span></span>
+                                    </div> 
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div> 
+            <div class="col-lg-6 col-md-6 col-sm-5">
+                <p class="header-section"><span class="glyphicon glyphicon-file icon-left" aria-hidden="true"></span>CSS Code</p> 
+                <div class="well random-check">
+                    <p class="header-section"><span class="glyphicon glyphicon-cog icon-left" aria-hidden="true"></span>Random Style Generation</p> 
+                    <ul class="list-inline list-inline-check">
+                            <li>
+                                <div class="checkbox">
+                                  <label>
+                                    <input type="checkbox" class="" id="check-uncheck" value="" aria-label="...">
+                                    <span class="check-label"></span>
+                                  </label>
+                                </div>
+                            </li>
+                    </ul>
+                    <div class="row checkbox-area">
+                        <div class="col-lg-4 col-md-6 col-sm-12">
+                            <div class="checkbox">
+                              <label>
+                                <input type="checkbox" class="checkbox-common" id="size-check" value="" aria-label="...">
+                                font-size
+                              </label>
+                            </div>
+                            <div class="checkbox">
+                              <label>
+                                <input type="checkbox" class="checkbox-common" id="style-check" value="" aria-label="..." >
+                                font-style
+                              </label>
+                            </div>
+                            <div class="checkbox">
+                              <label>
+                                <input type="checkbox" class="checkbox-common" id="font-check" value="" aria-label="...">
+                                font-family
+                              </label>
+                            </div>
+                            <div class="checkbox">
+                              <label>
+                                <input type="checkbox" class="checkbox-common" id="weight-check" value="" aria-label="..." >
+                                font-weight
+                              </label>
+                            </div>
+                            <div class="checkbox">
+                              <label>
+                                <input type="checkbox" class="checkbox-common" id="padding-check" value="" aria-label="..." >
+                                padding
+                              </label>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-md-6 col-sm-12">
+                            <div class="checkbox">
+                              <label>
+                                <input type="checkbox" class="checkbox-common" id="variant-check" value="" aria-label="...">
+                                font-variant
+                              </label>
+                            </div>
+                            <div class="checkbox">
+                              <label>
+                                <input type="checkbox" class="checkbox-common" id="color-check" value="" aria-label="...">
+                                color
+                              </label>
+                            </div>
+                            <div class="checkbox">
+                              <label>
+                                <input type="checkbox" class="checkbox-common" id="l-spacing-check" value="" aria-label="..." >
+                                letter-spacing 
+                              </label>
+                            </div>
+                            <div class="checkbox">
+                              <label>
+                                <input type="checkbox" class="checkbox-common" id="w-spacing-check" value="" aria-label="..." >
+                                word-spacing 
+                              </label>
+                            </div>
+                            <div class="checkbox">
+                              <label>
+                                <input type="checkbox" class="checkbox-common" id="text-shadow-check" value="" aria-label="..." >
+                                text-shadow 
+                              </label>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-md-6 col-sm-12">
+                            <div class="checkbox">
+                              <label>
+                                <input type="checkbox" class="checkbox-common" id="transform-check" value="" aria-label="...">
+                                text-transform
+                              </label>
+                            </div>
+                            <div class="checkbox">
+                              <label>
+                                <input type="checkbox" class="checkbox-common" id="decoration-check" value="" aria-label="..." >
+                                text-decoration
+                              </label>
+                            </div>
+                            <div class="checkbox">
+                              <label>
+                                <input type="checkbox" class="checkbox-common" id="align-check" value="" aria-label="..." >
+                                text-align
+                              </label>
+                            </div>
+                            <div class="checkbox">
+                              <label>
+                                <input type="checkbox" class="checkbox-common" id="bg-check" value="" aria-label="..." >
+                                background
+                              </label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="css-code-section">
+                    <code class="css-code" id="css-code">
+                        <div class="row">
+                            <div class="btn-wrapper">
+                                <ul class="list-inline button-list">
+                                  <li>
+                                    <button class="btn" id="reset"  rel="popover" data-toggle="popover" data-trigger="hover" data-placement="top"  title="" data-content="Reset All Styles To Default"><span class="glyphicon glyphicon-refresh icon-left" aria-hidden="true"></span>Reset</button>
+                                  </li>  
+                                  <li> <button class="btn" id="random" role="button" rel="popover" data-toggle="popover" data-trigger="hover" data-placement="top"  title="" data-content="Generate Random Styles."><span class="glyphicon glyphicon-random icon-left" aria-hidden="true"></span>Random</button></li>
+                                  <li> <button class="btn" id="copy" role="button" data-toggle="popover" data-trigger="hover" data-placement="top"  title="" data-content="Select CSS Code."><span class="glyphicon glyphicon-ok icon-left" aria-hidden="true"></span>
+                                  Select</button></li>
+                                  <li> <button class="btn" id="add" data-toggle="popover" data-trigger="hover" data-placement="top"  title="" data-content="Add CSS Code To Queue."><span class="glyphicon glyphicon-plus icon-left" aria-hidden="true"></span>Queue</button></li>
+                                  <li> <button class="btn" id="toggle-btn" data-toggle="popover" data-trigger="hover" data-placement="top"  title="" data-content=""><span class="glyphicon glyphicon-chevron-up icon-left" aria-hidden="true"></span>Hide</button></li>
+                                </ul>
+                            </div>
+                        </div>
+        
+                        <div id="css-code-container">
+                            <p class="property">font-size: <span id="font-size-code"></span><span class="glyphicon glyphicon-remove icon-left property-remove" aria-hidden="true"></span></p> <p class="property">font-style: <span id="font-style-code"></span><span class="glyphicon glyphicon-remove icon-left property-remove" aria-hidden="true"></span></p> <p class="property">font-family: <span id="font-family-code"></span><span class="glyphicon glyphicon-remove icon-left property-remove" aria-hidden="true"></span></p>
+                            <p class="property">font-weight: <span id="font-weight-code"></span><span class="glyphicon glyphicon-remove icon-left property-remove" aria-hidden="true"></span></p> <p class="property">font-variant: <span id="font-variant-code"></span><span class="glyphicon glyphicon-remove icon-left property-remove" aria-hidden="true"></span></p> 
+                            <p class="property">color: <span id="color-code"></span><span class="glyphicon glyphicon-remove icon-left property-remove" aria-hidden="true"></span></p><p class="property">letter-spacing: <span id="letter-spacing-code"></span><span class="glyphicon glyphicon-remove icon-left property-remove" aria-hidden="true"></span></p> 
+                            <p class="property">word-spacing: <span id="word-spacing-code"></span><span class="glyphicon glyphicon-remove icon-left property-remove" aria-hidden="true"></span></p> 
+                            <p class="property">text-transform: <span id="text-transform-code"></span><span class="glyphicon glyphicon-remove icon-left property-remove" aria-hidden="true"></span></p>
+                            <p class="property">text-decoration: <span id="text-decoration-code"></span><span class="glyphicon glyphicon-remove icon-left property-remove" aria-hidden="true"></span></p>
+                            <p class="property">text-align: <span id="text-align-code"></span><span class="glyphicon glyphicon-remove icon-left property-remove" aria-hidden="true"></span></p>
+                            <p class="property">background: <span id="background-code"></span><span class="glyphicon glyphicon-remove icon-left property-remove" aria-hidden="true"></span></p>
+                            <p class="property">padding: <span id="padding-code"></span><span class="glyphicon glyphicon-remove icon-left property-remove" aria-hidden="true"></span></p>
+                            <p class="property">text-shadow: 
+                                <span id="text-shadow-code">
+                                    <span id="none-code"> </span>
+                                    <span id="h-shadow-code"> </span>
+                                    <span id="v-shadow-code"> </span>
+                                    <span id="blur-radius-code"> </span>
+                                    <span id="shadow-color-code"> </span>
+                                </span>
+                                <span class="glyphicon glyphicon-remove icon-left property-remove" aria-hidden="true"></span>
+                            </p>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <div class="checkbox conversion-area">
+                                    <p>
+                                        Unit Conversion
+                                        <small>(N.B. : Default Font Size Is 16px)</small>
+                                    </p>
+                                    <label>
+                                        <input type="checkbox" class="px-to-em" id="px-to-em" value="" aria-label="..." >
+                                        px to em
+                                    </label>
+                                    <label>
+                                        <input type="checkbox" class="px-to-em" id="px-to-pt" value="" aria-label="..." >
+                                        px to pt
+                                    </label>
+                                    <label>
+                                        <input type="checkbox" class="px-to-em" id="px-to-percent" value="" aria-label="..." >
+                                        px to %
+                                    </label>
+                               </div>
+                            </div>
+                        </div>   
+                    </code>
+                </div>
+                <button class="btn" id="view" data-toggle="modal" data-target="#view-modal" data-toggle="popover" data-trigger="hover" data-placement="top"  title="" data-content="Click On This Button To See The Saved Styles In Queue."><span class="glyphicon glyphicon-list icon-left" aria-hidden="true"></span>View Queued Styles</button>     
+                <p class="notice well"><small>Import <span class="font-name"></span> From <a id="font-link" target="_blank" title="Google Fonts">Here.</a></small></p>
+            </div>
+            <div class="modal fade" id="view-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+              <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title" id="myModalLabel">Queued Styles</h4>
+                  </div>
+                  <div class="modal-body">
+                    <button class="btn" id="clear-stack">Clear All</button>
+                    <code class="saved-styles" id="saved-styles">
+                        <div id="saved-styles-div"></div>
+                    </code>
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn" id="okay" data-dismiss="modal">Close</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>© text-decor.com, 2015</p>
+    </footer>
+
+  <script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-colorpicker/2.3.0/js/bootstrap-colorpicker.min.js"></script>
+  <script src="js/libs/jquery-ui.min.js"></script>
+  <script src="js/libs/service.min.js"></script>
+  <script src="js/libs/flati-v1.0.min.js"></script>
+  <script src="js/script.js"></script>
+  <script type="text/javascript">
+        $("body").flati({
+            skin : "rasgulla",
+            containerBg : "rgb(253,248,247)",
+            containerBorder : "#D2D2D2",
+            iconBg : "rgb(255, 252, 234)",
+            iconHover : "#003380",
+            triggerPosition: "bottom"
+        }); 
+  </script>
+</body>
+</html>
