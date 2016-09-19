@@ -1,0 +1,86 @@
+/*
+* Flati Social Share jQuery Plugin v1.0
+* http://seyalon.com/plugins/js/flati/
+* 
+* Documentation URI : http://voidtricks.com/flati-social-share-jquery-plugin/
+* Author : Anand Roshan
+*
+* Date: Sun,  02/03/2014 
+*/
+
+/*body{padding: 0; margin:0;}
+
+#shareContainer img{border:none;}
+#shareContainer{
+	position: fixed;
+	top: 0; left: 0;
+	width: 100%;
+	height: 84px;
+	padding: 10px 0;
+	text-align: center;
+	overflow: hidden;
+	display: none;
+	z-index: 9999;
+}
+#shareContainer img{
+	padding: 10px;
+	margin: 20px 10px 0 10px;
+	position: relative;
+	z-index: 10000;
+}
+#sClose, #sTrigger{
+	cursor: pointer;
+	position: fixed;
+	bottom: 0;
+	margin-bottom: 20px;
+	background: #B84C4C;
+	color: #fff;
+	width: 50px;
+	height: 50px;
+	z-index: 500;
+}*/
+
+/*
+* Flati Social Share jQuery Plugin v1.0
+* http://seyalon.com/plugins/js/flati/
+* 
+* Documentation URI : http://voidtricks.com/flati-social-share-jquery-plugin/
+* Author : Anand Roshan
+*
+* Date: Sun,  02/03/2014 
+*/
+
+body{padding: 0; margin:0;}
+
+#shareContainer img{border:none;}
+#shareContainer{
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 83px;
+	padding: 10px 0;
+	text-align: center;
+	overflow: hidden;
+	display: none;
+	z-index: 9999;
+}
+#shareContainer img{
+	padding: 10px;
+	margin: 0px 0px 0 5px;
+	max-width: 60px;
+	position: relative;
+	z-index: 10000;
+	border: 1px solid #D4D4D4;
+}
+#sClose, #sTrigger{
+	cursor: pointer;
+	position: fixed;
+	bottom: 0;
+	margin-bottom: 20px;
+	background: #B84C4C;
+	color: #fff;
+	width: 50px;
+	height: 50px;
+	z-index: 500;
+}
